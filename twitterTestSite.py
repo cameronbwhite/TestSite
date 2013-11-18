@@ -41,9 +41,15 @@ def get_twitter_token():
     return (secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
 
 @app.route("/")
-def home():
-    resp = twitter.get('statuses/user_timeline.json')
+@app.route("/<username>")
+def home(username=None):
+    if not username:
+        resp = twitter.get('statuses/user_timeline.json')
+    else:
+        resp = twitter.get('statuses/user_timeline/{}.json'.format(username))
     return render_template('layout.html', tweets=resp.data)
+
+
 
 if __name__ == '__main__':
     app.run()
