@@ -1,3 +1,2 @@
-* Figure out authentication
-* Pull some tweets from twitter given a username
-* Display the tweets
+* Use twitter-text-py and html/css to display the tweets
+    * Add metadata and formatting
