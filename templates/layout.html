@@ -5,7 +5,13 @@
     </div>
     <div class=contents>
         <div class=bodywrapper>
-            {% block body %}{% endblock %}
+            <ul id="tweets">
+            {% for tweet in tweets %}
+                <li>{{ tweet.text }}</li>
+            {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
+
+
